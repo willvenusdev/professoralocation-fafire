@@ -10,5 +10,4 @@ public class ProfessorAlocationApplication {
 		SpringApplication.run(ProfessorAlocationApplication.class, args);
 	}
 	// Comentando aqui para testar
-
 }
