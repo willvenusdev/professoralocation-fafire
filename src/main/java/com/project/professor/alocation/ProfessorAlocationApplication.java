@@ -9,5 +9,6 @@ public class ProfessorAlocationApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProfessorAlocationApplication.class, args);
 	}
+	// Comentando aqui para testar
 
 }
