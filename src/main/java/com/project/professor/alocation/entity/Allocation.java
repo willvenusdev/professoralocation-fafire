@@ -1,12 +1,18 @@
 package com.project.professor.alocation.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Time;
 import java.time.DayOfWeek;
 
 @Entity
 @Table(name = "allocation")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Allocation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,40 +25,6 @@ public class Allocation {
         this.id = id;
         this.day = day;
         this.start = start;
-        this.end = end;
-    }
-
-    public Allocation() {}
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public DayOfWeek getDay() {
-        return day;
-    }
-
-    public void setDay(DayOfWeek day) {
-        this.day = day;
-    }
-
-    public Time getStart() {
-        return start;
-    }
-
-    public void setStart(Time start) {
-        this.start = start;
-    }
-
-    public Time getEnd() {
-        return end;
-    }
-
-    public void setEnd(Time end) {
         this.end = end;
     }
 

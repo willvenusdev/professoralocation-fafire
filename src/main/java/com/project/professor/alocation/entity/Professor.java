@@ -1,9 +1,15 @@
 package com.project.professor.alocation.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "professor")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,32 +22,6 @@ public class Professor {
     public Professor(Long id, String name, String cpf) {
         this.id = id;
         this.name = name;
-        this.cpf = cpf;
-    }
-
-    public Professor() {}
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
