@@ -1,18 +1,15 @@
 package com.project.professor.alocation.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.sql.Time;
 import java.time.DayOfWeek;
 
 @Entity
 @Table(name = "allocation")
-@Getter
-@Setter
-@NoArgsConstructor
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor @ToString
 public class Allocation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,20 +18,11 @@ public class Allocation {
     private Time start;
     private Time end;
 
-    public Allocation(Long id, DayOfWeek day, Time start, Time end) {
-        this.id = id;
-        this.day = day;
-        this.start = start;
-        this.end = end;
-    }
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "professor_id", nullable = false)
+    private Professor professor;
 
-    @Override
-    public String toString() {
-        return "Allocation{" +
-                "id=" + id +
-                ", day=" + day +
-                ", start=" + start +
-                ", end=" + end +
-                '}';
-    }
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
 }
