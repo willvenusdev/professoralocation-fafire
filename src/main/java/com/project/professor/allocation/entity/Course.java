@@ -1,4 +1,4 @@
-package com.project.professor.alocation.entity;
+package com.project.professor.allocation.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,4 +1,4 @@
-package com.project.professor.alocation.entity;
+package com.project.professor.allocation.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -25,4 +25,16 @@ public class Allocation {
     @ManyToOne(optional = false)
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
+
+    public DayOfWeek getDayOfWeek() {
+        return day;
+    }
+
+    public Time getStartHour() {
+        return start;
+    }
+
+    public Time getEndHour() {
+        return end;
+    }
 }
